@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 20px;
+}
+.inout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+body {
+  background-image: url(/public/47e3eaacf0d084920d73a97da51f196d.jpeg);
+  background-size: cover;
+}
+.ou {
+  width: 520px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0px;
+  border-radius: 25px;
+  margin-top: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+}
+.ou1 {
+  width: 520px;
+  height: 655px;
+  opacity: 0px;
+  border-radius: 25px;
+  margin-top: 70px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+}
+.div1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.input {
+  padding: 15px 10px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.sar {
+  color: #fff;
+}
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.orab {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  color: #fff;
+  gap: 20px;
+}
+.btn4 {
+  text-decoration: dashed;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  cursor: pointer;
+  width: 90%;
+  margin: auto;
+  background: #003465;
+  border: none;
+  opacity: 0px;
+  padding: 15px;
+  color: #fff;
+  border-radius: 4px;
+}
+.orab7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.orab7:active {
+  color: red;
+}
+header {
+  background-color: #ffffff15;
+  color: #fff;
+}
+.headercontainer {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(20px);
+}
+.li {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: #dcd3d3;
+  width: 301px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 5px;
+}
+.li img {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+}
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.ulconta {
+  margin-top: 30px;
+}
