@@ -14,16 +14,14 @@ function Login() {
     let pasWord = pasword;
 
     const data = JSON.parse(localStorage.getItem("users")) ?? [];
-    const userf = data.filter(({ email, pasword }) => {
-      console.log(email == inpuy && pasword == pasWord);
-      return email == inpuy && pasword === pasWord;
-    });
-    console.log(userf);
-    if (userf.length) {
-      localStorage.setItem("user", JSON.stringify(true));
+    console.log(data);
+    const userf = data.some(
+      ({ email, password }) => email == inpuy && password === pasWord
+    );
+    if (userf) {
+      const user = data.filter(({ email }) => email === inpuy)[0];
+      localStorage.setItem("user", JSON.stringify(user));
       naviate("/layout");
-    } else {
-      localStorage.setItem("user", JSON.stringify(false));
     }
   };
   return (

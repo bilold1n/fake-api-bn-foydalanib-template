@@ -8,34 +8,36 @@ function Signup() {
   const [userinput, setuserinput] = useState({
     name: "",
     email: "",
-    pasword: "",
+    password: "",
     avatar: "",
   });
   const hendlesubmit = async (e) => {
     e.preventDefault();
     console.log(userinput);
+    try {
+      const req = await fetch("https://api.escuelajs.co/api/v1/users/", {
+        method: "POST",
+        headers: {
+          Access: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...userinput }),
+      });
+      const res = await req.json();
+      console.log(req);
+      console.log(res);
+      const data = JSON.parse(localStorage.getItem("users")) ?? [];
+      localStorage.setItem("users", JSON.stringify([...data, res]));
+      localStorage.setItem("user", JSON.stringify(res));
+    } catch {}
 
-    const req = await fetch("https://api.escuelajs.co/api/v1/users/", {
-      method: "POST",
-      headers: {
-        Access: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...userinput }),
+    navigate("/layout");
+    setuserinput({
+      name: "",
+      email: "",
+      pasword: "",
+      avatar: "",
     });
-    const res = await req.json();
-    console.log(req);
-    console.log(res);
-    const data = JSON.parse(localStorage.getItem("users")) ?? [];
-    localStorage.setItem("users", JSON.stringify([...data, userinput]));
-    localStorage.setItem("user", JSON.stringify(true));
-    // navigate("/layout");
-    // setuserinput({
-    //   name: "",
-    //   email: "",
-    //   pasword: "",
-    //   avatar: "",
-    // });
   };
   return (
     <>
@@ -73,9 +75,9 @@ function Signup() {
 
             <TextField
               onChange={(e) =>
-                setuserinput((prev) => ({ ...prev, pasword: e.target.value }))
+                setuserinput((prev) => ({ ...prev, password: e.target.value }))
               }
-              value={userinput.pasword}
+              value={userinput.password}
               className="input"
               type="password"
               required

@@ -11,6 +11,7 @@ import Layout from "./page/layout";
 import Login from "./page/login";
 import Signup from "./page/sigup";
 import Home from "./page/home";
+import Detalis from "./page/detalis";
 
 function App() {
   function Redirect({ children }) {
@@ -33,6 +34,7 @@ function App() {
           }
         >
           <Route path="/layout" element={<Home></Home>}></Route>
+          <Route path="myprofil" element={<Detalis></Detalis>}></Route>
         </Route>
       </>
     )
